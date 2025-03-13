@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 
 namespace DungeonExplorer
 {
@@ -15,11 +17,19 @@ namespace DungeonExplorer
         }
         public void PickUpItem(string item)
         {
+            inventory.Add(item);
+            Console.WriteLine("You have added an iteam to you inventory\n");
 
         }
         public string InventoryContents()
         {
             return string.Join(", ", inventory);
+        }
+
+        public bool HasIteam(string item)
+        {
+            return inventory.Contains(item);
+            //hehehhehe
         }
     }
 }
